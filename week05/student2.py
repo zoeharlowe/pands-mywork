@@ -11,12 +11,14 @@ list_of_grades = []
 input_course_name = str(input)
 
 # Create while loop to get the program to continue running until the user inputs a blank
+# Append each input to the lists of courses/grades
 while len(input_course_name) != 0:
     input_course_name = str(input("Enter course name: "))
     list_of_courses.append(input_course_name)
     if len(input_course_name) == 0:
         break
-    input_grade = str(input("Enter grade: "))
+    input_grade = int(input("Enter grade: "))
+    list_of_grades.append(input_grade)
 
 # Create a dictionary called student_profile to store the data  
 # I wasn't sure what the best way of representing the courses and grades was
@@ -32,13 +34,7 @@ student_profile = {
 
 print("Student:", student_profile["name"])
 
-# Check to see if the courses and grades are being stored correctly
-# The courses are, the grades are not
-print(list_of_courses)
-print(list_of_grades)
-
 # I used a for loop to output the course name and grade for each course
-# Unfortunately I couldn't get this to print any courses or grades
 for course in student_profile["Courses"]:
     for i in range(len(list_of_courses)) and range(len(list_of_grades)):
-        print("\t", list_of_courses[i], ":", "\t", list_of_grades[i])
+        print("\t", list_of_courses[i] + ":" + "\t", list_of_grades[i])
