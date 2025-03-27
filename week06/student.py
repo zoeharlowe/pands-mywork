@@ -4,7 +4,7 @@
 
 def display_menu():
     print("What would you like to do?" "\n" "\t" "(a) Add new student" "\n" "\t" 
-          "(v) View students" "\n" "\t" "(q) Quit")
+          "(v) View students" "\n" "\t" "(s) Save" "\n" "\t" "(q) Quit")
     choice = input("Type one letter: ").strip()
     print(f"You chose {choice}")
     return choice
