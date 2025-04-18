@@ -16,8 +16,8 @@ list_of_lists = [
 ]
 
 df = pd.DataFrame(list_of_lists, columns=["Name", "Subject", "Score"])
-print(df.describe())
-print(type(df))
+# print(df.describe())
+# print(type(df))
 
 FILENAME = "grades.csv"
 
@@ -34,3 +34,6 @@ df.to_excel(excel_filename, index=False, sheet_name='data')
 
 with pd.ExcelWriter(excel_filename, engine='openpyxl', mode='a') as writer: 
     df.describe().to_excel(writer, sheet_name="summary") 
+
+mean =  df.describe().loc['mean','Score'] 
+print(mean)
